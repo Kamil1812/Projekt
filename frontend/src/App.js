@@ -1,22 +1,27 @@
 import './App.css';
-import React, {useState, useEffect} from 'react';
-import LoginForm from './LoginForm';
+import React, {useState} from 'react';
+import LoginForm from './components/LoginForm/LoginForm';
+import Lewy from './components/Lewy/Lewy'
+import Prawy from './components/Prawy/Prawy'
+import Srodkowy from './components/Srodkowy/Srodkowy'
 
 
 function App() {
 
-    const[token, setToken] = useState(false);
+    const[token, setToken] = useState();
 
-    //return login form
-    if(!token) {
-        return <LoginForm setToken={setToken} />
+    if(!token) 
+    {
+        return <LoginForm setToken={setToken} /> 
     }
 
-    //return basic website if logged in
     return (
             <div className="app">
-            {/* STRONA G£ÓWNA */}
-            <center> <h1>  Strona g³ówna  </h1> </center>
+                <Lewy />
+
+                <Srodkowy />
+
+                <Prawy />
             </div>
         )
 }
