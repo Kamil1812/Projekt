@@ -36,19 +36,16 @@ class Router {
                         if (verified){
                             res.status(200).send(true)
                         } 
-                        else{
-                            console.log(verified, password, data[0].haslo);
-                            res.status(401).json({
-                                success:false,
-                                msg:'Niepoprawne hasło!'
-                            })
+                        else
+                        {
+                            res.send(false).status(401)  
                         }
                     });
-                } else{
-                    res.json({
-                        success:false,
-                        msg: 'NIE ODNALEZIONO UZYTKOWNIKA '
-                    })
+                } 
+
+                else
+                {
+                    res.send(false).status(401)
                 }
                 
             });
