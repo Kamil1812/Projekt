@@ -1,0 +1,43 @@
+.Srodkowy {
+    background: darkblue;
+    color: white;
+    border-radius: 30px;
+    height: 865px;
+    width: 55%;
+    text-align: center;
+    float: left;
+    margin-top: 45px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 35px;
+    padding-top: 20px;
+    word-wrap: break-word;
+}
+
+.Srodkowy textarea {
+    resize: none;
+    float: center;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.Srodkowy button {
+    margin-top: 3px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 600;
+    font-size: 15px;
+    border-style: solid;
+    background-color: white;
+}
+
+.Srodkowy button:hover {
+    cursor: pointer;
+}

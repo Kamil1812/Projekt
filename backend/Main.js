@@ -6,7 +6,6 @@ const path =       require('path');
 const mysql =      require('mysql');
 const Router =     require('./Router');
 
-app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
 app.use(cors());
 

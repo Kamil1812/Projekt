@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'
-import { faL } from '@fortawesome/free-solid-svg-icons';
 
 async function loginUser(credentials) {
     return fetch('http://localhost:3333/Login', {
@@ -37,25 +36,25 @@ export default function LoginForm({ setToken }) {
             error_msg = "Niepoprawny login lub hasło!"
         }
 
-        document.getElementById('err_message_p').innerHTML=error_msg
+        document.getElementById('err_message_span').innerHTML=error_msg
     }
 
     return (
         <div className="login-wrapper">
-            <h1>Please Log In</h1>
+            <h1> Zaloguj się </h1>
             <form onSubmit={handleSubmit}>
                 <label>
-                    <p>Username</p>
-                    <input type="text" onChange={e => setUserName(e.target.value)} />
+                    <p> Login: </p>
+                    <input type="text" placeholder="Nazwa użytkownika" onChange={e => setUserName(e.target.value)} />
                 </label>
                 <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)} />
+                    <p> Hasło: </p>
+                    <input type="password" placeholder="Hasło" onChange={e => setPassword(e.target.value)} />
                 </label>
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit"> Zaloguj </button>
                 </div>
-                <p id="err_message_p">  </p>
+                <span id="err_message_span">  </span>
             </form>
         </div>
     )
@@ -64,3 +63,5 @@ export default function LoginForm({ setToken }) {
 LoginForm.propTypes = {
     setToken: PropTypes.func.isRequired
 };
+
+// <img src={require('./amw_logo.png')} /> 
