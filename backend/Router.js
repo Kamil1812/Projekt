@@ -16,7 +16,7 @@ class Router {
                     success: false,
                     msg: 'Login lub hasło jest zbyt długie!'
                 })
-                return;
+                return 0;
             }
 
             let cols = [username];
@@ -51,6 +51,8 @@ class Router {
             });
         });
     }
+
+    
 }
 
 module.exports = Router;

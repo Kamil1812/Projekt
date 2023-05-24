@@ -5,6 +5,7 @@
   "main": "Main.js",
   "scripts": {
     "dev": "nodemon Main.js"
+    
   },
   "author": "",
   "license": "ISC",
