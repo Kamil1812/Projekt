@@ -28,8 +28,34 @@ function MojaKomponenta() {
     );
   }
 
+
+function Clear(){
+    const [inputValue, setInputValue] = useState();
+        
+            const czysc = ()=>{
+                setInputValue('')
+            }
+
+            return(
+                <> <label>
+                <p> Opis (opcjonalnie): </p>
+                <input onChange={(e) => setInputValue(e.target.value)} value={inputValue} className="NameInput" type="text" /> 
+            </label>
+            <div>
+                <button type="submit"> Dodaj </button>
+                <button type="submit" onClick={czysc}> Wyczyść </button>
+            </div></>
+                
+            )
+}
+   
+    
+
+
 export default function Lewy() 
     {
+        
+            
         
      
         return ( 
@@ -61,20 +87,16 @@ export default function Lewy()
                     <input type="checkbox" id ="XX" className="c1" name="XX"/> <div className="c1Child">Pan X</div>
                     </div>
                     
-                   
                     
                 </label>
                 <label>
                     <p> Deadline: </p>
                     {MojaKomponenta()}
                 </label>
-                <label>
-                    <p> Opis (opcjonalnie): </p>
-                    <input className="NameInput" type="text" /> 
-                </label>
-                <div>
-                    <button type="submit"> Dodaj </button> <button type="submit"> Wyczyść </button>
-                </div>
+
+                {Clear()}
+
+               
             </div>
         
         )

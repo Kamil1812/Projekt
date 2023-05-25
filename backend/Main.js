@@ -87,5 +87,47 @@ app.post('/api/notatki', (req, res) => {
     });
   });
 
+//DODAWANIE UZYTKOWNIKOW
+
+
+  app.post('/api/uzytk', (req, res) => {
+    const { username, password } = req.headers;
+  
+    if (username.length > 100 || password.length > 100) {
+      res.send(400).json({
+        success: false,
+        msg: 'Login lub hasło jest zbyt długie!',
+      });
+    }
+  
+    bcrypt.hash(password, saltRounds, (bcryptErr, hash) => {
+      if (bcryptErr) {
+        res.send(400).json({
+          success: false,
+          msg: 'Wystąpił błąd, spróbuj ponownie!',
+        });
+      }
+  
+      let data = {
+        login: username,
+        haslo: hash,
+      };
+  
+      db.query('INSERT INTO logowanie(login, haslo) VALUES ?', data, (err, result) => {
+        if (err) {
+          res.send(400).json({
+            success: false,
+            msg: 'Wystąpił błąd, spróbuj ponownie!',
+          });
+        }
+  
+        res.send(200).json({
+          success: true,
+          msg: 'Użytkownik został dodany pomyślnie!',
+        });
+      });
+    });
+  });
+
 console.log("Server slucha na porcie 3333")
 app.listen(3333);
